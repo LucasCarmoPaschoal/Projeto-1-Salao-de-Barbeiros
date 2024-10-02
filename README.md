@@ -16,3 +16,4 @@ Foi implementado função da thread de chegada de clientes onde ja informava a c
 Foi implementado um função de thread de barbeiro onde o barbeiro ficava esperando o semaforo ter uma solicitação para ser atendido e assim começava o atendimento e quando terminava se não tem fila o barbeiro dorme.
 
 Na main foi inicializado os semaforos e as threads dos barbeiros logo em seguida é inicializado as threads das chegadas dos cliente e depois é esperado todos serem atendidos.
+gcc -o projeto projeto.c -lpthread
