@@ -1,0 +1,35 @@
+O salão dos barbeiros dorminhocos
+Neste projeto você implementar a sincronização de processos utilizando semáforos, baseando-se no clássico problema do barbeiro dorminhoco. Vocês devem desenvolver um programa que simula o funcionamento de um salão de barbeiros, onde barbeiros dormem quando não há clientes e acordam para atender quando um cliente chega. O projeto deve abordar problemas de exclusão mútua, deadlock, starvation e sincronização.
+
+Cenário
+Salão de barbeiros: O salão possui 3 barbeiros e 5 cadeiras de espera.
+Barbeiros: dormem quando não há clientes e acordam quando um cliente chega para ser atendido.
+Clientes: chegam aleatoriamente no salão. Se todas as cadeiras de espera estiverem ocupadas, o cliente vai embora sem cortar o cabelo.
+Cadeiras de espera: capacidade para 5 clientes. Clientes aguardam em uma dessas cadeiras se os barbeiros estiverem ocupados.
+Requisitos do projeto
+Semáforos e Mutex
+Use semáforos binários para gerenciar o estado dos barbeiros (dormindo/acordado).
+Use semáforos de contagem para gerenciar o número de cadeiras de espera disponíveis.
+Use mutexes para garantir a exclusão mútua no acesso à cadeira do barbeiro e às cadeiras de espera.
+Funções principais
+Função do cliente: simula a chegada de um cliente no salão. Se houver cadeira de espera disponível, senta-se e espera. Se não houver, vai embora.
+Função do barbeiro: simula o barbeiro dormindo até ser acordado por um cliente. Quando acordado, atende o cliente e depois verifica se há mais clientes esperando.
+Lógica de sincronização
+Quando um cliente chega, verifica se há cadeiras de espera disponíveis.
+Se houver cadeira de espera, o cliente ocupa uma e acorda um barbeiro (se necessário).
+Se não houver cadeira de espera, o cliente vai embora.
+O barbeiro atende os clientes na ordem de chegada.
+Saída esperada
+Logs detalhados das ações de clientes e barbeiros.
+Mensagens indicando quando um cliente chega, quando ocupa uma cadeira de espera, quando acorda um barbeiro, quando um barbeiro começa a atender um cliente e quando o cliente vai embora sem ser atendido.
+Mensagens indicando quando um barbeiro volta a dormir após atender um cliente.
+A saída do programa deve incluir mensagens detalhadas que indicam o estado e as ações dos clientes e barbeiros em cada etapa do processo, como mostrado nos exemplos abaixo. Note que o exemplo abaixo é somente um exemplo do tipo de mensagem que deve ser emitida. Não necessariamente ele está correto. Se possível, adicione timestamps nas mensagens.
+
+Cliente 1 chegou.
+Cliente 1 sentou na cadeira de espera.
+Cliente 1 está sendo atendido pelo barbeiro 1.
+Cliente 1 terminou o corte de cabelo e saiu.
+Cliente 2 chegou.
+Cliente 2 foi embora sem ser atendido, não há cadeiras de espera disponíveis.
+Barbeiro 1 está atendendo um cliente.
+Barbeiro 1 terminou de atender e está pronto para o próximo cliente.
